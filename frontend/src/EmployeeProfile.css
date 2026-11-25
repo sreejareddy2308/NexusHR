@@ -1,0 +1,385 @@
+
+/* =========================================
+   NEXUSHR - EMPLOYEE PROFILE
+   Uses the shared DashboardLayout
+========================================= */
+
+.employee-profile-page {
+  width: 100%;
+  min-width: 0;
+  color: #172033;
+  font-family: Arial, sans-serif;
+}
+
+/* Loading */
+
+.profile-loading {
+  padding: 40px 20px;
+  text-align: center;
+  color: #475569;
+}
+
+/* Profile Banner */
+
+.profile-banner {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 22px 24px;
+  background: linear-gradient(120deg, #244b91, #4776e6);
+  color: white;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  min-width: 0;
+}
+
+.profile-large-avatar {
+  width: 60px;
+  height: 60px;
+  min-width: 60px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: white;
+  color: #4776e6;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.profile-banner-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.profile-banner-info h2 {
+  margin: 0 0 5px;
+  font-size: 21px;
+}
+
+.profile-banner-info p {
+  margin: 3px 0;
+  color: #e1eaff;
+  font-size: 14px;
+}
+
+.profile-banner-info span {
+  font-size: 12px;
+  color: #e1eaff;
+  overflow-wrap: anywhere;
+}
+
+.profile-status {
+  background: #ffffff25;
+  padding: 8px 11px;
+  border-radius: 20px;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.status-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  background: #70efb0;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+/* Profile Card */
+
+.profile-card {
+  width: 100%;
+  background: white;
+  padding: 24px;
+  border: 1px solid #e5eaf2;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(15, 23, 42, 0.03);
+}
+
+.profile-card-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.profile-card-heading h2 {
+  font-size: 20px;
+  color: #172554;
+  margin: 0 0 5px;
+}
+
+.profile-card-heading p {
+  font-size: 13px;
+  color: #718096;
+  margin: 0;
+}
+
+/* Edit Button */
+
+.profile-edit-button {
+  background: #4776e6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+.profile-edit-button:hover,
+.profile-save-button:hover {
+  background: #315fc5;
+}
+
+/* Form */
+
+.profile-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 22px;
+}
+
+.profile-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+}
+
+.profile-field label {
+  font-size: 13px;
+  font-weight: bold;
+  color: #475569;
+}
+
+.profile-field input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  border: 1px solid #dce3ed;
+  border-radius: 7px;
+  outline: none;
+  font-size: 13px;
+  color: #172033;
+  background: white;
+}
+
+.profile-field input:focus {
+  border-color: #4776e6;
+  box-shadow: 0 0 0 3px #4776e620;
+}
+
+.profile-field input:disabled {
+  background: #f5f7fb;
+  color: #64748b;
+  cursor: not-allowed;
+}
+
+/* Form Actions */
+
+.profile-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.profile-cancel-button,
+.profile-save-button {
+  padding: 10px 17px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.profile-cancel-button {
+  background: white;
+  border: 1px solid #dce3ed;
+  color: #475569;
+}
+
+.profile-cancel-button:hover {
+  background: #f1f5f9;
+}
+
+.profile-save-button {
+  background: #4776e6;
+  border: none;
+  color: white;
+}
+
+.profile-cancel-button:disabled,
+.profile-save-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Messages */
+
+.profile-success-message {
+  padding: 11px 13px;
+  background: #e9f8ef;
+  color: #187443;
+  border-radius: 7px;
+  margin-bottom: 14px;
+  font-size: 13px;
+}
+
+.profile-error-message {
+  padding: 11px 13px;
+  background: #fef2f2;
+  color: #b91c1c;
+  border-radius: 7px;
+  margin-bottom: 14px;
+  font-size: 13px;
+}
+
+/* Footer */
+
+.profile-footer {
+  margin-top: 22px;
+  padding: 10px 0;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .profile-banner {
+    flex-wrap: wrap;
+    padding: 17px;
+  }
+
+  .profile-status {
+    margin-left: 78px;
+  }
+
+  .profile-form-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .profile-card {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-card {
+    padding: 14px;
+  }
+
+  .profile-card-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .profile-banner {
+    padding: 14px;
+    gap: 12px;
+  }
+
+  .profile-status {
+    margin-left: 0;
+  }
+
+  .profile-form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .profile-cancel-button,
+  .profile-save-button {
+    width: 100%;
+  }
+}
+
+/* =========================================
+   EMPLOYEE PROFILE - SLIGHTLY LARGER FONTS
+========================================= */
+
+/* Profile banner */
+.profile-banner-info h2 {
+  font-size: 24px;
+}
+
+.profile-banner-info p {
+  font-size: 16px;
+}
+
+.profile-banner-info span {
+  font-size: 14px;
+}
+
+.profile-status {
+  font-size: 13px;
+}
+
+/* Profile section heading */
+.profile-card-heading h2 {
+  font-size: 22px;
+}
+
+.profile-card-heading p {
+  font-size: 15px;
+}
+
+/* Edit button */
+.profile-edit-button {
+  font-size: 15px;
+}
+
+/* Profile form */
+.profile-field label {
+  font-size: 15px;
+}
+
+.profile-field input {
+  font-size: 15px;
+}
+
+/* Form action buttons */
+.profile-cancel-button,
+.profile-save-button {
+  font-size: 15px;
+}
+
+/* Success and error messages */
+.profile-success-message,
+.profile-error-message {
+  font-size: 15px;
+}
+
+/* Loading and footer */
+.profile-loading {
+  font-size: 15px;
+}
+
+.profile-footer {
+  font-size: 12px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+  .profile-banner-info h2 {
+    font-size: 21px;
+  }
+
+  .profile-card-heading h2 {
+    font-size: 20px;
+  }
+
+  .profile-field label,
+  .profile-field input {
+    font-size: 14px;
+  }
+}
+
+
+

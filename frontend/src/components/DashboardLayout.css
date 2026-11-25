@@ -1,0 +1,633 @@
+/* =====================================
+   NEXUSHR - GLOBAL STYLES
+===================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+  background: #f4f6fb;
+}
+
+/* =====================================
+   MAIN DASHBOARD LAYOUT
+===================================== */
+
+.dashboard-layout {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: #f4f6fb;
+}
+
+/* =====================================
+   SIDEBAR
+===================================== */
+
+.dashboard-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+
+  width: 240px;
+  height: 100vh;
+  height: 100dvh;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 24px 15px;
+
+  background: #172554;
+  color: white;
+
+  z-index: 1100;
+  overflow: hidden;
+}
+
+/* Brand */
+
+.sidebar-brand {
+  padding: 0 8px 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  flex-shrink: 0;
+}
+
+.dashboard-logo {
+  font-size: 26px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+.sidebar-tagline {
+  color: #93c5fd;
+  font-size: 9px;
+  letter-spacing: 0.7px;
+  margin: 7px 0 0;
+}
+
+/* Role */
+
+.sidebar-role {
+  color: #93c5fd;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin: 20px 8px 12px;
+  flex-shrink: 0;
+}
+
+/* =====================================
+   NAVIGATION
+===================================== */
+
+.sidebar-navigation {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+
+  gap: 6px;
+  padding: 0 0 12px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: #475569 transparent;
+}
+
+.sidebar-navigation::-webkit-scrollbar {
+  width: 5px;
+}
+
+.sidebar-navigation::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 10px;
+}
+
+.sidebar-link {
+  display: block;
+  flex-shrink: 0;
+
+  padding: 12px 13px;
+
+  color: #dbeafe;
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  border-radius: 8px;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.sidebar-link:hover {
+  background: rgba(59, 130, 246, 0.2);
+  color: white;
+}
+
+.sidebar-link.active {
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+}
+
+/* =====================================
+   LOGOUT
+===================================== */
+
+.logout-button {
+  width: 100%;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 12px;
+
+  background: #dc2626;
+  color: white;
+
+  border: none;
+  border-radius: 8px;
+
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+
+  transition: background 0.2s ease;
+}
+
+.logout-button:hover {
+  background: #b91c1c;
+}
+
+/* =====================================
+   MAIN CONTENT
+===================================== */
+
+.dashboard-main {
+  flex: 1;
+  min-width: 0;
+  width: calc(100% - 240px);
+
+  margin-left: 240px;
+
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+/* =====================================
+   HEADER
+===================================== */
+
+.dashboard-header {
+  position: sticky;
+  top: 0;
+  z-index: 900;
+
+  width: 100%;
+  min-height: 76px;
+
+  padding: 13px 26px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+
+  background: #ffffff;
+
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+}
+
+.header-title {
+  min-width: 0;
+}
+
+.dashboard-header h1 {
+  color: #172554;
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.dashboard-header p {
+  color: #64748b;
+  font-size: 10px;
+  letter-spacing: 0.8px;
+  margin: 5px 0 0;
+}
+
+/* =====================================
+   MOBILE MENU BUTTON
+===================================== */
+
+.mobile-menu-button {
+  display: none;
+
+  border: none;
+  background: transparent;
+  color: #172554;
+
+  font-size: 27px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+}
+
+.mobile-menu-button:hover {
+  background: #eff6ff;
+}
+
+/* =====================================
+   SIDEBAR OVERLAY
+===================================== */
+
+.sidebar-overlay {
+  display: none;
+}
+
+/* =====================================
+   USER PROFILE
+===================================== */
+
+.dashboard-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  min-width: 0;
+}
+
+.user-email {
+  color: #334155;
+  font-size: 12px;
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.user-role {
+  color: #64748b;
+  font-size: 10px;
+  text-transform: capitalize;
+}
+
+.user-avatar {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+
+  border-radius: 50%;
+
+  background: #2563eb;
+  color: white;
+
+  display: grid;
+  place-items: center;
+
+  font-weight: 700;
+  font-size: 15px;
+}
+
+/* =====================================
+   PAGE CONTENT
+===================================== */
+
+.dashboard-content {
+  width: 100%;
+  min-width: 0;
+  padding: 22px 26px;
+}
+
+/* =====================================
+   WELCOME SECTION
+===================================== */
+
+.welcome-section {
+  margin-bottom: 20px;
+}
+
+.welcome-section h2 {
+  color: #172554;
+  font-size: 21px;
+  margin: 0 0 6px;
+}
+
+.welcome-section p {
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* =====================================
+   DASHBOARD STATISTICS
+===================================== */
+
+.dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.stat-card {
+  min-width: 0;
+  padding: 18px;
+
+  background: white;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 11px;
+
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+}
+
+.stat-card h3 {
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.stat-card h2 {
+  color: #172554;
+  font-size: 27px;
+  margin: 10px 0 5px;
+}
+
+.stat-card p {
+  color: #94a3b8;
+  font-size: 11px;
+  margin: 0;
+}
+
+/* =====================================
+   ADMIN SECTIONS
+===================================== */
+
+.admin-sections {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.admin-card {
+  padding: 19px;
+
+  background: white;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 11px;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.admin-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.07);
+}
+
+.admin-card h3 {
+  color: #172554;
+  font-size: 16px;
+  margin: 0 0 8px;
+}
+
+.admin-card p {
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* =====================================
+   TABLET RESPONSIVENESS
+===================================== */
+
+@media (max-width: 1000px) {
+  .dashboard-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dashboard-content {
+    padding: 18px;
+  }
+
+  .dashboard-header {
+    padding: 12px 18px;
+  }
+}
+
+/* =====================================
+   MOBILE RESPONSIVENESS
+===================================== */
+
+@media (max-width: 700px) {
+
+  /* Show hamburger */
+  .mobile-menu-button {
+    display: flex;
+    flex-shrink: 0;
+  }
+
+  /* Hide sidebar outside the viewport */
+  .dashboard-sidebar {
+    width: 260px;
+    max-width: 85vw;
+
+    padding: 20px 13px;
+
+    transform: translateX(-100%);
+    visibility: hidden;
+
+    transition:
+      transform 0.3s ease,
+      visibility 0.3s ease;
+  }
+
+  /* Open sidebar */
+  .dashboard-sidebar.sidebar-open {
+    transform: translateX(0);
+    visibility: visible;
+  }
+
+  /* Dark overlay */
+  .sidebar-overlay {
+    display: block;
+
+    position: fixed;
+    inset: 0;
+
+    background: rgba(15, 23, 42, 0.55);
+
+    z-index: 1050;
+  }
+
+  /* Main content uses full width */
+  .dashboard-main {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .dashboard-header {
+    min-height: 65px;
+    padding: 10px 12px;
+    gap: 8px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 17px;
+  }
+
+  .dashboard-header p {
+    font-size: 8px;
+  }
+
+  .header-title {
+    flex: 1;
+  }
+
+  .dashboard-content {
+    padding: 14px 12px;
+  }
+
+  .user-email {
+    max-width: 105px;
+    font-size: 10px;
+  }
+
+  .user-avatar {
+    width: 31px;
+    height: 31px;
+    min-width: 31px;
+    font-size: 12px;
+  }
+
+  .dashboard-user {
+    gap: 6px;
+  }
+}
+
+/* =====================================
+   SMALL MOBILE SCREENS
+===================================== */
+
+@media (max-width: 400px) {
+  .dashboard-sidebar {
+    width: 250px;
+    max-width: 85vw;
+    padding: 15px 10px;
+  }
+
+  .dashboard-logo {
+    font-size: 20px;
+  }
+
+  .sidebar-link {
+    font-size: 11px;
+    padding: 9px 7px;
+  }
+
+  .dashboard-header {
+    padding: 10px 8px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 15px;
+  }
+
+  .dashboard-header p {
+    font-size: 7px;
+    letter-spacing: 0.2px;
+  }
+
+  .user-email {
+    max-width: 75px;
+    font-size: 9px;
+  }
+
+  .dashboard-content {
+    padding: 12px 9px;
+  }
+
+  .mobile-menu-button {
+    width: 34px;
+    min-width: 34px;
+    font-size: 24px;
+  }
+}
+
+/* =====================================
+   SMALL SCREEN CARDS
+===================================== */
+
+@media (max-width: 600px) {
+  .dashboard-stats,
+  .admin-sections {
+    grid-template-columns: 1fr;
+  }
+
+  .welcome-section h2 {
+    font-size: 18px;
+  }
+}
+
+/* =====================================
+   AI MENU ICON
+===================================== */
+
+.ai-menu-icon {
+  display: inline-block;
+  margin-right: 9px;
+  color: #a78bfa;
+  font-size: 17px;
+}
+

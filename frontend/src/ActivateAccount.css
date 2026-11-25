@@ -1,0 +1,80 @@
+.activate-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: #f3f6fc;
+  font-family: Arial, sans-serif;
+}
+
+.activate-card {
+  width: 100%;
+  max-width: 430px;
+  padding: 38px;
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.activate-card h1 {
+  margin: 0;
+  color: #2457a7;
+  text-align: center;
+  font-size: 30px;
+}
+
+.activate-subtitle {
+  text-align: center;
+  color: #64748b;
+  font-size: 11px;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+}
+
+.activate-card h2 {
+  color: #172033;
+  font-size: 23px;
+}
+
+.activate-card label {
+  display: block;
+  margin-top: 18px;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.activate-card input {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+  box-sizing: border-box;
+  font-size: 15px;
+}
+
+.activate-card button {
+  width: 100%;
+  margin-top: 24px;
+  padding: 14px;
+  border: none;
+  border-radius: 7px;
+  background: #2457a7;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.activate-card button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.activate-message {
+  margin-top: 15px;
+  color: #2457a7;
+  font-size: 14px;
+}
+

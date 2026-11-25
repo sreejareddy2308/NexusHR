@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexusHR - Employee Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>NexusHR Employee Dashboard</h1>
+    <p>Welcome to the NexusHR HR Management System.</p>
+</header>
+
+<main>
+    <section class="summary">
+        <div class="card">
+            <h3>Total Employees</h3>
+            <p id="totalEmployees">0</p>
+        </div>
+    </section>
+
+    <section class="employee-section">
+        <h2>Employee Management</h2>
+
+        <div class="search-box">
+            <input
+                    type="text"
+                    id="searchName"
+                    placeholder="Search employees by name..."
+            >
+            <button onclick="searchEmployees()">Search</button>
+            <button onclick="loadEmployees()">Show All</button>
+        </div>
+        <div class="search-box">
+            <select id="departmentFilter">
+                <option value="">Select Department</option>
+                <option value="IT">IT</option>
+                <option value="Engineering">Engineering</option>
+            </select>
+            <button onclick="filterByDepartment()">Filter Department</button>
+        </div>
+
+        <div class="search-box">
+            <input
+                    type="text"
+                    id="jobTitleSearch"
+                    placeholder="Search by job title..."
+            >
+            <button onclick="searchByJobTitle()">Search Job title</button>
+        </div>
+        <button onclick="loadEmployees()">View Employees</button>
+
+        <p id="status">Click the button to load employees.</p>
+        <div id="employeeList"></div>
+    </section>
+</main>
+
+<script>
+    async function loadEmployees() {
+        const status = document.getElementById("status");
+        const employeeList = document.getElementById("employeeList");
+
+        status.textContent = "Loading employees...";
+        employeeList.replaceChildren();
+
+        try {
+            const response = await fetch("/api/employees");
+
+            if (!response.ok) {
+                throw new Error("HTTP error: " + response.status);
+            }
+
+            const employees = await response.json();
+
+            document.getElementById("totalEmployees").textContent =
+                employees.length;
+            status.textContent = "Employee records loaded successfully.";
+
+            employees.forEach(employee => {
+                const card = document.createElement("div");
+                card.className = "employee-card";
+
+                const name = document.createElement("h3");
+                name.textContent = employee.fullName;
+
+                const details = document.createElement("p");
+                details.textContent =
+                    "Department: " + employee.department +
+                    " | Job Title: " + employee.jobTitle +
+                    " | Email: " + employee.email+
+                    " | Salary: "+ employee.salary;
+
+                card.append(name, details);
+                employeeList.appendChild(card);
+            });
+        } catch (error) {
+            status.textContent =
+                "Could not load employees. Please check the application.";
+            console.error(error);
+        }
+    }
+    async function searchEmployees() {
+        const name = document.getElementById("searchName").value.trim();
+        const status = document.getElementById("status");
+        const employeeList = document.getElementById("employeeList");
+
+        if (!name) {
+            status.textContent = "Please enter an employee name.";
+            return;
+        }
+
+        status.textContent = "Searching...";
+        employeeList.replaceChildren();
+
+        try {
+            const response = await fetch(
+                "/api/employees/search?name=" + encodeURIComponent(name)
+            );
+
+            if (!response.ok) {
+                throw new Error("HTTP error: " + response.status);
+            }
+
+            const employees = await response.json();
+
+            document.getElementById("totalEmployees").textContent =
+                employees.length;
+
+            status.textContent = "Search results: " + employees.length;
+
+            employees.forEach(employee => {
+                const card = document.createElement("div");
+                card.className = "employee-card";
+
+                const nameElement = document.createElement("h3");
+                nameElement.textContent = employee.fullName;
+
+                const details = document.createElement("p");
+                details.textContent =
+                    "Department: " + employee.department +
+                    " | Job Title: " + employee.jobTitle +
+                    " | Email: " + employee.email +
+                    " | Salary: " + employee.salary;
+
+                card.append(nameElement, details);
+                employeeList.appendChild(card);
+            });
+        } catch (error) {
+            status.textContent = "Could not search employees.";
+            console.error(error);
+        }
+    }
+
+    async function filterByDepartment() {
+        const department = document.getElementById("departmentFilter").value;
+        const status = document.getElementById("status");
+        const employeeList = document.getElementById("employeeList");
+
+        if (!department) {
+            status.textContent = "Please select a department.";
+            return;
+        }
+
+        status.textContent = "Filtering employees...";
+        employeeList.replaceChildren();
+
+        try {
+            const response = await fetch(
+                "/api/employees/filter/department?department=" +
+                encodeURIComponent(department)
+            );
+
+            if (!response.ok) {
+                throw new Error("HTTP error: " + response.status);
+            }
+
+            const employees = await response.json();
+
+            document.getElementById("totalEmployees").textContent =
+                employees.length;
+
+            status.textContent =
+                "Employees in " + department + ": " + employees.length;
+
+            employees.forEach(employee => {
+                const card = document.createElement("div");
+                card.className = "employee-card";
+
+                const name = document.createElement("h3");
+                name.textContent = employee.fullName;
+
+                const details = document.createElement("p");
+                details.textContent =
+                    "Department: " + employee.department +
+                    " | Job Title: " + employee.jobTitle +
+                    " | Email: " + employee.email +
+                    " | Salary: " + employee.salary;
+
+                card.append(name, details);
+                employeeList.appendChild(card);
+            });
+
+        } catch (error) {
+            status.textContent = "Could not filter employees.";
+            console.error(error);
+        }
+    }
+    async function searchByJobTitle() {
+        const jobTitle = document.getElementById("jobTitleSearch").value.trim();
+        const status = document.getElementById("status");
+        const employeeList = document.getElementById("employeeList");
+
+        if (!jobTitle) {
+            status.textContent = "Please enter a job title.";
+            return;
+        }
+
+        status.textContent = "Searching by job title...";
+        employeeList.replaceChildren();
+
+        try {
+            const response = await fetch(
+                "/api/employees/search/job-title?jobTitle=" +
+                encodeURIComponent(jobTitle)
+            );
+
+            if (!response.ok) {
+                throw new Error("HTTP error: " + response.status);
+            }
+
+            const employees = await response.json();
+
+            document.getElementById("totalEmployees").textContent =
+                employees.length;
+
+            status.textContent =
+                "Search results: " + employees.length + " employee(s) found.";
+
+            employees.forEach(employee => {
+                const card = document.createElement("div");
+                card.className = "employee-card";
+
+                const name = document.createElement("h3");
+                name.textContent = employee.fullName;
+
+                const details = document.createElement("p");
+                details.textContent =
+                    "Department: " + employee.department +
+                    " | Job Title: " + employee.jobTitle +
+                    " | Email: " + employee.email +
+                    " | Salary: " + employee.salary;
+
+
+                card.append(name, details);
+                employeeList.appendChild(card);
+            });
+
+        } catch (error) {
+            status.textContent = "Could not search by job title.";
+            console.error(error);
+        }
+    }
+</script>
+</body>
+</html>

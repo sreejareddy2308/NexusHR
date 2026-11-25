@@ -1,0 +1,535 @@
+.performance-page {
+  padding: 25px;
+  background: #f5f7fb;
+  min-height: 100vh;
+  color: #1e293b;
+}
+
+.performance-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.performance-header h1 {
+  font-size: 27px;
+  margin-bottom: 8px;
+}
+
+.performance-header p {
+  color: #64748b;
+}
+
+.performance-summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.performance-summary-card {
+  background: white;
+  padding: 22px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.performance-summary-card h3 {
+  color: #64748b;
+  font-size: 14px;
+}
+
+.performance-summary-card h2 {
+  font-size: 30px;
+  margin-top: 12px;
+  color: #2563eb;
+}
+
+.performance-form-section,
+.performance-goals-section {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.performance-form-section h2,
+.performance-goals-section h2 {
+  margin-bottom: 20px;
+}
+
+.performance-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.performance-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.performance-field label {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.performance-field input,
+.performance-field select,
+.performance-field textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.performance-field textarea {
+  min-height: 85px;
+  resize: vertical;
+}
+
+.performance-submit {
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  padding: 13px 20px;
+  cursor: pointer;
+  font-weight: 600;
+  align-self: end;
+}
+
+.performance-submit:hover {
+  background: #1d4ed8;
+}
+
+.performance-goals-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.performance-goal-card {
+  border: 1px solid #e2e8f0;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.performance-goal-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.performance-goal-top h3 {
+  margin-bottom: 8px;
+}
+
+.performance-goal-top p,
+.performance-goal-top small {
+  color: #64748b;
+}
+
+.goal-status {
+  height: fit-content;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+  background: #e2e8f0;
+}
+
+.goal-status.completed {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.goal-status.in_progress {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.goal-status.not_started {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.performance-description {
+  margin: 18px 0;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+.performance-progress-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.performance-progress-track {
+  height: 9px;
+  background: #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.performance-progress-fill {
+  height: 100%;
+  background: #2563eb;
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+.progress-label {
+  display: block;
+  margin-top: 18px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.performance-range {
+  width: 100%;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.performance-goal-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  font-size: 13px;
+  color: #64748b;
+}
+
+.performance-delete {
+  background: #fee2e2;
+  color: #b91c1c;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.performance-error {
+  background: #fee2e2;
+  color: #991b1b;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .performance-summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .performance-form,
+  .performance-goals-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .performance-page {
+    padding: 15px;
+  }
+}
+
+/* Compact Performance Management Layout */
+
+.performance-page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px 22px;
+  box-sizing: border-box;
+}
+
+/* Header */
+.performance-header {
+  margin-bottom: 16px;
+}
+
+/* Summary Cards */
+.performance-summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin: 14px 0 20px;
+}
+
+.performance-summary-card {
+  padding: 14px 16px;
+  margin: 0;
+  min-height: auto;
+  border-radius: 10px;
+}
+
+.performance-summary-card h3 {
+  margin: 0 0 8px;
+  font-size: 14px;
+}
+
+.performance-summary-card h2 {
+  margin: 0;
+  font-size: 25px;
+}
+
+/* Create Goal Section */
+.performance-form-section {
+  padding: 18px 20px;
+  margin: 0 0 20px;
+  border-radius: 10px;
+}
+
+.performance-form-section h2,
+.performance-goals-section h2 {
+  margin: 0 0 14px;
+  font-size: 20px;
+}
+
+/* Compact Form Grid */
+.performance-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 18px;
+  align-items: end;
+}
+
+.performance-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin: 0;
+}
+
+.performance-field label {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.performance-field input,
+.performance-field select,
+.performance-field textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 9px 11px;
+  margin: 0;
+  font-size: 14px;
+}
+
+.performance-field textarea {
+  min-height: 65px;
+  resize: vertical;
+}
+
+.performance-submit {
+  grid-column: 1 / -1;
+  width: 100%;
+  padding: 10px;
+  margin: 0;
+}
+
+/* Goal Cards */
+.performance-goals-section {
+  margin-top: 0;
+}
+
+.performance-goals-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.performance-goal-card {
+  padding: 16px;
+  margin: 0;
+  border-radius: 10px;
+}
+
+.performance-goal-card h3 {
+  margin: 0 0 5px;
+}
+
+.performance-description {
+  margin: 10px 0;
+}
+
+.performance-progress-info {
+  margin: 8px 0;
+}
+
+.performance-progress-track {
+  margin: 7px 0 12px;
+}
+
+.performance-goal-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+}
+
+/* Tablet and Mobile */
+@media (max-width: 768px) {
+  .performance-page {
+    padding: 12px;
+  }
+
+  .performance-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .performance-form {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .performance-submit {
+    grid-column: auto;
+  }
+
+  .performance-goals-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 400px) {
+  .performance-summary-card {
+    padding: 11px;
+  }
+
+  .performance-summary-card h2 {
+    font-size: 21px;
+  }
+}
+
+/* Reduce unnecessary spacing inside goal cards */
+
+.performance-goals-section {
+  margin-top: 12px !important;
+  padding-top: 0 !important;
+}
+
+.performance-goals-section h2 {
+  margin-bottom: 12px !important;
+}
+
+.performance-goals-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px !important;
+  align-items: start;
+}
+
+.performance-goal-card {
+  padding: 13px 15px !important;
+  margin: 0 !important;
+  min-height: unset !important;
+  height: auto !important;
+  display: flex;
+  flex-direction: column;
+  gap: 5px !important;
+}
+
+.performance-goal-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 0 !important;
+}
+
+.performance-goal-top h3 {
+  margin: 0 0 3px !important;
+  font-size: 17px;
+}
+
+.performance-goal-top p {
+  margin: 2px 0 !important;
+}
+
+.performance-goal-top small {
+  margin: 0 !important;
+}
+
+.goal-status {
+  margin: 0 !important;
+  padding: 6px 9px !important;
+  font-size: 10px !important;
+  white-space: nowrap;
+}
+
+.performance-description {
+  margin: 5px 0 !important;
+  padding: 0 !important;
+  text-align: left !important;
+  line-height: 1.4;
+  min-height: unset !important;
+}
+
+.performance-progress-info {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0 !important;
+}
+
+.performance-progress-track {
+  height: 8px !important;
+  margin: 3px 0 6px !important;
+}
+
+.performance-progress-fill {
+  height: 100%;
+}
+
+.progress-label {
+  margin: 3px 0 !important;
+  font-size: 12px;
+}
+
+.performance-range {
+  width: 100%;
+  margin: 2px 0 !important;
+}
+
+.performance-goal-card > button:not(.performance-delete) {
+  align-self: center;
+  margin: 5px 0 !important;
+  padding: 8px 16px !important;
+  font-size: 13px;
+}
+
+.performance-goal-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5px !important;
+  padding-top: 7px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.performance-delete {
+  margin: 0 !important;
+  padding: 6px 10px !important;
+  font-size: 12px;
+}
+
+@media (max-width: 768px) {
+  .performance-goals-grid {
+    grid-template-columns: 1fr;
+    gap: 10px !important;
+  }
+
+  .performance-goal-card {
+    padding: 12px !important;
+  }
+}
+

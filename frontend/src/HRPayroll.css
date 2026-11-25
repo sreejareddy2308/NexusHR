@@ -1,0 +1,280 @@
+.hr-payroll-page {
+  padding: 28px;
+  color: #1e293b;
+  background: #f8fafc;
+  min-height: 100vh;
+}
+
+.payroll-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.payroll-heading h1 {
+  margin: 0 0 8px;
+  font-size: 28px;
+}
+
+.payroll-heading p {
+  margin: 0;
+  color: #64748b;
+}
+
+.payroll-refresh,
+.generate-payroll-button {
+  border: none;
+  border-radius: 8px;
+  padding: 12px 18px;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.payroll-refresh:hover,
+.generate-payroll-button:hover {
+  background: #1d4ed8;
+}
+
+.payroll-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.payroll-summary-card,
+.payroll-panel {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 22px;
+}
+
+.payroll-summary-card span {
+  display: block;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+
+.payroll-summary-card strong {
+  font-size: 23px;
+}
+
+.payroll-panel {
+  margin-bottom: 24px;
+}
+
+.payroll-panel h2 {
+  font-size: 20px;
+  margin: 0 0 22px;
+}
+
+.payroll-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.payroll-form-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.payroll-form-grid input,
+.payroll-form-grid select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+  background: white;
+  font-size: 14px;
+  color: #1e293b;
+}
+
+.payroll-form-grid input:focus,
+.payroll-form-grid select:focus {
+  outline: 2px solid #93c5fd;
+  border-color: #2563eb;
+}
+
+.payroll-calculation {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  background: #f1f5f9;
+  padding: 18px;
+  border-radius: 10px;
+  margin: 24px 0;
+}
+
+.payroll-calculation div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.payroll-calculation span {
+  color: #64748b;
+  font-size: 14px;
+}
+
+.payroll-calculation strong {
+  font-size: 19px;
+}
+
+.payroll-calculation .net-salary strong {
+  color: #15803d;
+}
+
+.generate-payroll-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.payroll-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.payroll-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 850px;
+}
+
+.payroll-table th,
+.payroll-table td {
+  padding: 14px;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+  white-space: nowrap;
+}
+
+.payroll-table th {
+  background: #f8fafc;
+  color: #475569;
+  font-size: 13px;
+}
+
+.payroll-table td {
+  font-size: 14px;
+}
+
+.payroll-status {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background: #dcfce7;
+  color: #166534;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.delete-payroll-button {
+  padding: 7px 12px;
+  border: none;
+  border-radius: 6px;
+  background: #fee2e2;
+  color: #b91c1c;
+  cursor: pointer;
+}
+
+.payroll-alert {
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 18px;
+}
+
+.payroll-alert.error {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.payroll-alert.success {
+  background: #dcfce7;
+  color: #166534;
+}
+
+@media (max-width: 768px) {
+  .hr-payroll-page {
+    padding: 16px;
+  }
+
+  .payroll-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .payroll-summary,
+  .payroll-form-grid,
+  .payroll-calculation {
+    grid-template-columns: 1fr;
+  }
+}
+
+.download-payroll-button {
+  padding: 7px 12px;
+  margin-right: 8px;
+  border: none;
+  border-radius: 6px;
+  background: #dbeafe;
+  color: #1d4ed8;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.download-payroll-button:hover {
+  background: #bfdbfe;
+}
+
+.payroll-filters {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr auto;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.payroll-filters input,
+.payroll-filters select {
+  min-width: 0;
+  padding: 11px;
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+  background: white;
+}
+
+.payroll-filters button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 7px;
+  background: #e2e8f0;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .payroll-filters {
+    grid-template-columns: 1fr;
+  }
+}
+
+.payroll-export-btn {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 7px;
+  background: #166534;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.payroll-export-btn:hover {
+  background: #14532d;
+}

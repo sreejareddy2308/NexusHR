@@ -1,0 +1,1041 @@
+/* =========================================
+   NEXUSHR - DOCUMENT MANAGEMENT DASHBOARD
+   Modern Enterprise HRMS Design
+========================================= */
+
+.documents-page {
+  width: 100%;
+  min-width: 0;
+  padding: 28px;
+  color: #172033;
+  font-family: Arial, sans-serif;
+  background: #f4f7fc;
+  box-sizing: border-box;
+  min-height: 100vh;
+}
+
+.documents-page * {
+  box-sizing: border-box;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.documents-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.documents-eyebrow {
+  margin: 0 0 9px;
+  color: #4268bd;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.documents-header h2 {
+  margin: 0 0 9px;
+  color: #14213d;
+  font-size: 30px;
+  font-weight: 750;
+  letter-spacing: -0.6px;
+}
+
+.documents-header p {
+  margin: 0;
+  color: #718096;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.documents-header-icon {
+  display: grid;
+  place-items: center;
+  width: 62px;
+  height: 62px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #e5edff, #dce8ff);
+  color: #3159bd;
+  font-size: 28px;
+  box-shadow: 0 4px 12px rgba(49, 89, 189, 0.08);
+}
+
+/* =========================================
+   STATISTICS
+========================================= */
+
+.documents-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 26px;
+}
+
+.documents-stat-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  min-width: 0;
+  padding: 21px;
+  background: #ffffff;
+  border: 1px solid #e7edf6;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.035);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+}
+
+.documents-stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 9px 22px rgba(15, 23, 42, 0.07);
+}
+
+.documents-stat-icon {
+  display: grid;
+  place-items: center;
+  width: 49px;
+  height: 49px;
+  flex-shrink: 0;
+  border-radius: 13px;
+  font-size: 22px;
+}
+
+.total-icon {
+  background: #eaf0ff;
+}
+
+.pdf-icon {
+  background: #fff0ef;
+}
+
+.word-icon {
+  background: #eaf4ff;
+}
+
+.other-icon {
+  background: #f2edff;
+}
+
+.documents-stat-card p {
+  margin: 0 0 7px;
+  color: #718096;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.documents-stat-card h3 {
+  margin: 0;
+  color: #172b4d;
+  font-size: 27px;
+  font-weight: 750;
+}
+
+/* =========================================
+   MAIN CARDS
+========================================= */
+
+.document-upload-card,
+.document-list-card {
+  min-width: 0;
+  margin-bottom: 25px;
+  padding: 25px;
+  background: #ffffff;
+  border: 1px solid #e7edf6;
+  border-radius: 15px;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.035);
+}
+
+/* =========================================
+   SECTION HEADINGS
+========================================= */
+
+.document-section-heading,
+.document-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 23px;
+}
+
+.document-section-heading h3,
+.document-list-header h3 {
+  margin: 0 0 7px;
+  color: #172b4d;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.document-section-heading p,
+.document-list-header p {
+  margin: 0;
+  color: #718096;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.document-heading-icon {
+  display: grid;
+  place-items: center;
+  width: 43px;
+  height: 43px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: #eaf0ff;
+  color: #3159bd;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+/* =========================================
+   UPLOAD FORM
+========================================= */
+
+.document-upload-form {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 22px;
+}
+
+.document-form-group {
+  min-width: 0;
+}
+
+.document-form-group label {
+  display: block;
+  margin-bottom: 9px;
+  color: #334155;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.document-form-group input {
+  display: block;
+  width: 100%;
+  min-height: 45px;
+  padding: 11px 13px;
+  color: #172033;
+  background: #ffffff;
+  border: 1px solid #dce4f0;
+  border-radius: 9px;
+  outline: none;
+  font-family: inherit;
+  font-size: 13px;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.document-form-group input:focus {
+  border-color: #4268d5;
+  box-shadow: 0 0 0 3px rgba(66, 104, 213, 0.10);
+}
+
+.document-form-group input[type="file"] {
+  padding: 9px;
+  background: #f8faff;
+}
+
+.document-form-group small {
+  display: block;
+  margin-top: 7px;
+  color: #8996a9;
+  font-size: 11px;
+}
+
+/* =========================================
+   SELECTED FILE
+========================================= */
+
+.selected-document {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
+  padding: 13px 15px;
+  background: #f5f8ff;
+  border: 1px solid #e0e8fa;
+  border-radius: 10px;
+}
+
+.selected-document > span {
+  font-size: 23px;
+}
+
+.selected-document div {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.selected-document strong {
+  overflow: hidden;
+  color: #334155;
+  font-size: 13px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.selected-document small {
+  color: #718096;
+  font-size: 11px;
+}
+
+.remove-selected-file {
+  width: 31px;
+  height: 31px;
+  border: none;
+  border-radius: 8px;
+  background: #fee2e2;
+  color: #b91c1c;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.remove-selected-file:hover {
+  background: #fecaca;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.document-upload-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 11px;
+  margin-top: 22px;
+}
+
+.document-primary-button,
+.document-search-button,
+.document-clear-button,
+.document-refresh-button,
+.document-download-button,
+.document-delete-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 40px;
+  padding: 10px 15px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+
+.document-primary-button {
+  background: #3159bd;
+  color: #ffffff;
+}
+
+.document-primary-button:hover:not(:disabled) {
+  background: #25489e;
+  box-shadow: 0 4px 10px rgba(49, 89, 189, 0.18);
+}
+
+.document-search-button {
+  background: #3159bd;
+  color: #ffffff;
+}
+
+.document-search-button:hover:not(:disabled) {
+  background: #25489e;
+}
+
+.document-clear-button,
+.document-refresh-button {
+  background: #f0f3f9;
+  border-color: #e4e9f2;
+  color: #475569;
+}
+
+.document-clear-button:hover:not(:disabled),
+.document-refresh-button:hover:not(:disabled) {
+  background: #e4eaf4;
+}
+
+.document-download-button {
+  background: #edf4ff;
+  border-color: #d9e6ff;
+  color: #3159bd;
+}
+
+.document-download-button:hover:not(:disabled) {
+  background: #dce9ff;
+}
+
+.document-delete-button {
+  background: #fff0ef;
+  border-color: #ffd9d6;
+  color: #c24136;
+}
+
+.document-delete-button:hover:not(:disabled) {
+  background: #ffe0dd;
+}
+
+.document-primary-button:disabled,
+.document-search-button:disabled,
+.document-clear-button:disabled,
+.document-refresh-button:disabled,
+.document-download-button:disabled,
+.document-delete-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* =========================================
+   SUCCESS AND ERROR ALERTS
+========================================= */
+
+.document-success,
+.document-error {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 18px 0 0;
+  padding: 13px 15px;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.document-success {
+  background: #ecfdf3;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
+}
+
+.document-error {
+  background: #fff1f2;
+  color: #be123c;
+  border: 1px solid #fecdd3;
+}
+
+/* =========================================
+   PERMANENT UNDO PANEL
+========================================= */
+
+.document-undo-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  min-width: 0;
+  padding: 17px 21px;
+  margin: 0 0 25px;
+  background: linear-gradient(110deg, #fff8e8, #fffaf0);
+  border: 1px solid #f1dba8;
+  border-radius: 13px;
+  box-shadow: 0 3px 12px rgba(180, 130, 35, 0.045);
+}
+
+.document-undo-message {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-width: 0;
+}
+
+.document-undo-icon {
+  display: grid;
+  place-items: center;
+  width: 43px;
+  height: 43px;
+  flex-shrink: 0;
+  border-radius: 11px;
+  background: #ffedc2;
+  font-size: 22px;
+}
+
+.document-undo-message strong {
+  display: block;
+  color: #80530b;
+  font-size: 14px;
+}
+
+.document-undo-message p {
+  margin: 5px 0;
+  color: #695b43;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.document-undo-message small {
+  color: #8a7654;
+  font-size: 11px;
+}
+
+.document-undo-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 105px;
+  min-height: 41px;
+  padding: 10px 20px;
+  flex-shrink: 0;
+  background: #d99a16;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.document-undo-button:hover:not(:disabled) {
+  background: #bd8110;
+  transform: translateY(-1px);
+}
+
+.document-undo-button:disabled {
+  background: #d7c69f;
+  color: #ffffff;
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+/* =========================================
+   DOCUMENT COUNT
+========================================= */
+
+.document-count {
+  flex-shrink: 0;
+  padding: 8px 13px;
+  border-radius: 20px;
+  background: #edf2ff;
+  color: #3159bd;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* =========================================
+   SEARCH TOOLBAR
+========================================= */
+
+.document-list-toolbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 17px;
+}
+
+.document-search-box {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex: 1;
+  min-width: 220px;
+  min-height: 42px;
+  padding: 0 12px;
+  border: 1px solid #dce4f0;
+  border-radius: 9px;
+  background: #ffffff;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.document-search-box:focus-within {
+  border-color: #4268d5;
+  box-shadow: 0 0 0 3px rgba(66, 104, 213, 0.09);
+}
+
+.document-search-box > span {
+  color: #94a3b8;
+  font-size: 22px;
+}
+
+.document-search-box input {
+  width: 100%;
+  min-width: 0;
+  height: 39px;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  color: #334155;
+  background: transparent;
+  font-family: inherit;
+  font-size: 12px;
+}
+
+.document-search-box input:focus {
+  border: none;
+  box-shadow: none;
+}
+
+/* =========================================
+   FILTER BUTTONS
+========================================= */
+
+.document-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.document-filter {
+  padding: 8px 14px;
+  border: 1px solid #dce4f0;
+  border-radius: 20px;
+  background: #ffffff;
+  color: #536176;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.document-filter:hover {
+  background: #edf3ff;
+  border-color: #c8d8ff;
+  color: #3159bd;
+}
+
+.document-filter.active {
+  border-color: #3159bd;
+  background: #3159bd;
+  color: #ffffff;
+  box-shadow: 0 3px 8px rgba(49, 89, 189, 0.15);
+}
+
+/* =========================================
+   DOCUMENT TABLE
+========================================= */
+
+.document-table-wrapper {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  border: 1px solid #e7edf5;
+  border-radius: 11px;
+  background: #ffffff;
+  scrollbar-width: thin;
+  scrollbar-color: #c4cedd #f3f6fa;
+}
+
+.document-table-wrapper::-webkit-scrollbar {
+  height: 7px;
+}
+
+.document-table-wrapper::-webkit-scrollbar-track {
+  background: #f3f6fa;
+}
+
+.document-table-wrapper::-webkit-scrollbar-thumb {
+  background: #c4cedd;
+  border-radius: 10px;
+}
+
+.document-table {
+  width: 100%;
+  min-width: 900px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.document-table thead {
+  background: #f6f8fc;
+}
+
+.document-table th {
+  padding: 15px 12px;
+  color: #64748b;
+  border-bottom: 1px solid #e7edf5;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.document-table td {
+  padding: 15px 12px;
+  color: #536176;
+  border-bottom: 1px solid #edf1f6;
+  font-size: 12px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.document-table tbody tr {
+  transition: background 0.15s ease;
+}
+
+.document-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.document-table tbody tr:hover {
+  background: #f8faff;
+}
+
+/* =========================================
+   DOCUMENT IDENTIFIERS
+========================================= */
+
+.document-id,
+.document-employee-id {
+  display: inline-block;
+  padding: 6px 9px;
+  border-radius: 6px;
+  background: #edf2ff;
+  color: #3159bd;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* =========================================
+   DOCUMENT NAME
+========================================= */
+
+.document-name-cell {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 170px;
+}
+
+.document-file-icon {
+  display: grid;
+  place-items: center;
+  width: 37px;
+  height: 37px;
+  flex-shrink: 0;
+  border-radius: 9px;
+  background: #f0f4ff;
+  font-size: 18px;
+}
+
+.document-name-cell div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.document-name-cell strong {
+  max-width: 190px;
+  overflow: hidden;
+  color: #263449;
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.document-name-cell small {
+  max-width: 190px;
+  overflow: hidden;
+  color: #94a3b8;
+  font-size: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.document-type-badge {
+  display: inline-block;
+  padding: 6px 9px;
+  border-radius: 6px;
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+/* =========================================
+   ROW ACTIONS
+========================================= */
+
+.document-actions {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+/* =========================================
+   EMPTY STATE
+========================================= */
+
+.document-empty-state {
+  padding: 45px 15px !important;
+  text-align: center;
+}
+
+.document-empty-icon {
+  margin-bottom: 11px;
+  font-size: 32px;
+}
+
+.document-empty-state strong {
+  display: block;
+  color: #334155;
+  font-size: 14px;
+}
+
+.document-empty-state p {
+  margin: 7px 0 0;
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.document-list-footer {
+  margin-top: 16px;
+  color: #8996a9;
+  font-size: 12px;
+}
+
+/* =========================================
+   RESPONSIVE - TABLETS
+========================================= */
+
+@media (max-width: 1100px) {
+  .documents-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .document-upload-form {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* =========================================
+   RESPONSIVE - MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+  .documents-page {
+    padding: 17px;
+  }
+
+  .documents-header h2 {
+    font-size: 24px;
+  }
+
+  .documents-stats {
+    gap: 11px;
+  }
+
+  .documents-stat-card {
+    padding: 14px;
+    gap: 10px;
+  }
+
+  .documents-stat-card h3 {
+    font-size: 22px;
+  }
+
+  .document-upload-card,
+  .document-list-card {
+    padding: 17px;
+  }
+
+  .document-upload-form {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .document-list-toolbar {
+    align-items: stretch;
+  }
+
+  .document-search-box {
+    flex-basis: 100%;
+  }
+
+  .document-list-toolbar button {
+    flex: 1;
+  }
+
+  .document-section-heading h3,
+  .document-list-header h3 {
+    font-size: 17px;
+  }
+
+  .document-undo-panel {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .document-undo-button {
+    width: 100%;
+  }
+}
+
+/* =========================================
+   RESPONSIVE - SMALL MOBILE
+========================================= */
+
+@media (max-width: 420px) {
+  .documents-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .documents-header-icon {
+    width: 46px;
+    height: 46px;
+    font-size: 21px;
+  }
+
+  .document-upload-actions {
+    flex-direction: column;
+  }
+
+  .document-primary-button {
+    width: 100%;
+  }
+
+  .document-section-heading h3,
+  .document-list-header h3 {
+    font-size: 16px;
+  }
+
+  .document-count {
+    font-size: 10px;
+  }
+
+  .document-filters {
+    gap: 6px;
+  }
+
+  .document-filter {
+    padding: 7px 10px;
+    font-size: 11px;
+  }
+}
+
+/* =================================
+   TYPOGRAPHY SIZE ENHANCEMENT
+   ================================= */
+
+/* Main heading */
+.documents-header h2 {
+  font-size: 32px;
+}
+
+.documents-header p {
+  font-size: 16px;
+}
+
+/* Section headings */
+.document-section-heading h3,
+.document-list-header h3 {
+  font-size: 22px;
+}
+
+.document-section-heading p,
+.document-list-header p {
+  font-size: 15px;
+}
+
+/* Statistics */
+.documents-stat-card p {
+  font-size: 14px;
+}
+
+.documents-stat-card h3 {
+  font-size: 28px;
+}
+
+/* Form labels and inputs */
+.document-form-group label {
+  font-size: 15px;
+}
+
+.document-form-group input {
+  font-size: 15px;
+}
+
+.document-form-group small {
+  font-size: 13px;
+}
+
+/* Buttons */
+.document-primary-button,
+.document-search-button,
+.document-clear-button,
+.document-refresh-button,
+.document-download-button,
+.document-delete-button {
+  font-size: 14px;
+}
+
+/* Search */
+.document-search-box input {
+  font-size: 14px;
+}
+
+/* Filters */
+.document-filter {
+  font-size: 13px;
+}
+
+/* Document table */
+.document-table th {
+  font-size: 13px;
+}
+
+.document-table td {
+  font-size: 14px;
+}
+
+/* Document names */
+.document-name-cell strong {
+  font-size: 14px;
+}
+
+.document-name-cell small {
+  font-size: 12px;
+}
+
+/* Badges */
+.document-id,
+.document-employee-id,
+.document-type-badge,
+.document-count {
+  font-size: 13px;
+}
+
+/* Undo panel */
+.document-undo-message strong {
+  font-size: 16px;
+}
+
+.document-undo-message p {
+  font-size: 15px;
+}
+
+.document-undo-message small {
+  font-size: 13px;
+}
+
+.document-undo-button {
+  font-size: 15px;
+}
+
+/* Footer and alerts */
+.document-list-footer {
+  font-size: 13px;
+}
+
+.document-success,
+.document-error {
+  font-size: 14px;
+}

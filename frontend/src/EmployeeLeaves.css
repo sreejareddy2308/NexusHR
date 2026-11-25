@@ -1,0 +1,599 @@
+/* =========================================
+   NEXUSHR - EMPLOYEE LEAVE MANAGEMENT
+========================================= */
+
+.employee-leaves {
+  width: 100%;
+  min-width: 0;
+  min-height: calc(100vh - 70px);
+  padding: 20px 28px;
+  background: #f4f6fb;
+  color: #1e293b;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.leaves-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.leaves-eyebrow {
+  display: block;
+  margin-bottom: 6px;
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.leaves-header h1 {
+  margin: 0 0 6px;
+  color: #172554;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.leaves-header p {
+  margin: 0;
+  color: #64748b;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* Refresh Button */
+
+.leaves-refresh-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 7px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: 0.2s;
+}
+
+.leaves-refresh-button:hover:not(:disabled) {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.leaves-refresh-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* =========================================
+   SUMMARY CARDS
+========================================= */
+
+.leave-summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.leave-summary-card {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-width: 0;
+  padding: 17px 16px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  box-shadow: 0 2px 7px rgba(15, 23, 42, 0.035);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.leave-summary-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(15, 23, 42, 0.06);
+}
+
+.leave-summary-icon {
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 9px;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.leave-summary-icon.blue {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.leave-summary-icon.orange {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.leave-summary-icon.green {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.leave-summary-icon.red {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.leave-summary-card p {
+  margin: 0 0 5px;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.leave-summary-card h2 {
+  margin: 0 0 4px;
+  color: #172554;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.leave-summary-card small {
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+/* =========================================
+   FORM AND HISTORY PANELS
+========================================= */
+
+.leave-form-card,
+.leave-history-card {
+  width: 100%;
+  min-width: 0;
+  padding: 20px 22px;
+  margin-bottom: 18px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  box-shadow: 0 2px 7px rgba(15, 23, 42, 0.035);
+  box-sizing: border-box;
+}
+
+.leave-section-heading {
+  margin-bottom: 18px;
+}
+
+.leave-section-heading h2,
+.leave-history-heading h2 {
+  margin: 0 0 6px;
+  color: #172554;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.leave-section-heading p,
+.leave-history-heading p {
+  margin: 0;
+  color: #94a3b8;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* =========================================
+   LEAVE FORM
+========================================= */
+
+.leave-form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.leave-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+  margin-bottom: 15px;
+}
+
+.leave-field label {
+  color: #475569;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.leave-field input,
+.leave-field select,
+.leave-field textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 11px 13px;
+  border: 1px solid #dce3ed;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #1e293b;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.leave-field input,
+.leave-field select {
+  min-height: 43px;
+}
+
+.leave-field input:focus,
+.leave-field select:focus,
+.leave-field textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.09);
+}
+
+.leave-field input:disabled,
+.leave-field select:disabled,
+.leave-field textarea:disabled {
+  background: #f8fafc;
+  cursor: not-allowed;
+}
+
+.leave-field textarea {
+  min-height: 100px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.leave-field textarea::placeholder {
+  color: #94a3b8;
+}
+
+.leave-reason-field {
+  margin-top: 3px;
+}
+
+.leave-reason-field small {
+  color: #94a3b8;
+  font-size: 12px;
+  text-align: right;
+}
+
+/* =========================================
+   SUBMIT BUTTON
+========================================= */
+
+.leave-submit-button {
+  display: block;
+  min-height: 42px;
+  padding: 11px 22px;
+  margin: 7px auto 0;
+  border: none;
+  border-radius: 7px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.leave-submit-button:hover:not(:disabled) {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.leave-submit-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* =========================================
+   SUCCESS AND ERROR MESSAGES
+========================================= */
+
+.leave-message {
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border-radius: 7px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.leave-message.error {
+  background: #fee2e2;
+  border: 1px solid #fecaca;
+  color: #991b1b;
+}
+
+.leave-message.success {
+  background: #dcfce7;
+  border: 1px solid #bbf7d0;
+  color: #166534;
+}
+
+/* =========================================
+   LEAVE HISTORY HEADER
+========================================= */
+
+.leave-history-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 17px;
+}
+
+.leave-history-count {
+  padding: 7px 12px;
+  border-radius: 20px;
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* =========================================
+   LEAVE HISTORY TABLE
+========================================= */
+
+.leave-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.leave-table {
+  width: 100%;
+  min-width: 750px;
+  border-collapse: collapse;
+}
+
+.leave-table thead {
+  background: #f8fafc;
+}
+
+.leave-table th {
+  padding: 14px 13px;
+  color: #475569;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.leave-table td {
+  padding: 14px 13px;
+  color: #475569;
+  font-size: 14px;
+  line-height: 1.5;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: middle;
+}
+
+.leave-table td strong {
+  color: #172554;
+  font-weight: 600;
+}
+
+.leave-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.leave-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.leave-reason-cell {
+  max-width: 230px;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+/* =========================================
+   STATUS BADGES
+========================================= */
+
+.leave-status {
+  display: inline-block;
+  padding: 6px 11px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.leave-status.pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.leave-status.approved {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.leave-status.rejected {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* =========================================
+   LOADING AND EMPTY STATE
+========================================= */
+
+.leave-empty {
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: #64748b;
+  font-size: 14px;
+  text-align: center;
+}
+
+.leave-empty h3 {
+  margin: 10px 0 6px;
+  color: #334155;
+  font-size: 17px;
+}
+
+.leave-empty p {
+  margin: 0;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.leave-empty-icon {
+  color: #94a3b8;
+  font-size: 35px;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.leaves-footer {
+  padding: 14px 0 5px;
+  color: #94a3b8;
+  font-size: 11px;
+  text-align: center;
+  letter-spacing: 0.7px;
+}
+
+/* =========================================
+   TABLET RESPONSIVENESS
+========================================= */
+
+@media (max-width: 1000px) {
+  .leave-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .leave-form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .employee-leaves {
+    padding: 18px;
+  }
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 600px) {
+  .employee-leaves {
+    padding: 13px;
+  }
+
+  .leaves-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .leaves-header h1 {
+    font-size: 24px;
+  }
+
+  .leaves-header p {
+    font-size: 13px;
+  }
+
+  .leaves-refresh-button {
+    padding: 9px 13px;
+    font-size: 13px;
+  }
+
+  .leave-summary {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .leave-summary-card {
+    padding: 14px;
+  }
+
+  .leave-summary-card h2 {
+    font-size: 23px;
+  }
+
+  .leave-form-card,
+  .leave-history-card {
+    padding: 15px;
+    margin-bottom: 14px;
+  }
+
+  .leave-section-heading h2,
+  .leave-history-heading h2 {
+    font-size: 18px;
+  }
+
+  .leave-form-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .leave-field label {
+    font-size: 14px;
+  }
+
+  .leave-field input,
+  .leave-field select,
+  .leave-field textarea {
+    font-size: 14px;
+  }
+
+  .leave-submit-button {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .leave-history-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .leave-table {
+    min-width: 700px;
+  }
+
+  .leave-table th,
+  .leave-table td {
+    padding: 11px 10px;
+    font-size: 13px;
+  }
+
+  .leave-status {
+    font-size: 11px;
+  }
+
+  .leaves-footer {
+    font-size: 10px;
+  }
+}
+

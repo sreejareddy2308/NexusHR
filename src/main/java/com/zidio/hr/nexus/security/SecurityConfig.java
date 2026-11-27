@@ -120,6 +120,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(
                                 "/api/auth/**",
+                                "/health",
                                 "/error"
                         ).permitAll()
 

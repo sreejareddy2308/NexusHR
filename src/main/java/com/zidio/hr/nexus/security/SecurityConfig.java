@@ -66,7 +66,8 @@ public class SecurityConfig {
 
         configuration.setAllowedOrigins(List.of(
                 "http://localhost:5173",
-                "http://10.72.149.195:5173"
+                "http://10.72.149.195:5173",
+                "https://nexushr-frontend-bxpj.onrender.com"
         ));
 
         configuration.setAllowedMethods(List.of(

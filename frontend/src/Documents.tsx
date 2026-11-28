@@ -21,7 +21,7 @@ interface EmployeeDocument {
 
 type DocumentFilter = 'ALL' | 'PDF' | 'WORD' | 'IMAGE' | 'OTHER'
 
-const API_URL = 'http://localhost:8080/api'
+const API_URL = '/api'
 
 function formatFileSize(bytes: number) {
   if (!Number.isFinite(bytes) || bytes < 0) return '--'

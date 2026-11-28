@@ -16,7 +16,6 @@ import ResetPassword from './ResetPassword'
 import ActivateAccount from './ActivateAccount'
 import ProtectedRoute from './components/ProtectedRoute'
 import DashboardLayout from './components/DashboardLayout'
-import DocumentManagement from './components/DocumentManagement'
 
 import AdminDashboard from './dashboards/AdminDashboard'
 import HRDashboard from './dashboards/HRDashboard'
@@ -243,16 +242,16 @@ export default function App() {
           }
         />
 
-        <Route
-          path="/employee/documents"
-          element={
-            <ProtectedRoute allowedRoles={['EMPLOYEE']}>
-              <DashboardLayout>
-                <EmployeeDocuments />
-              </DashboardLayout>
-            </ProtectedRoute>
-          }
-        />
+     <Route
+       path="/employee/documents"
+       element={
+         <ProtectedRoute allowedRoles={['EMPLOYEE']}>
+           <DashboardLayout title="My Documents">
+             <EmployeeDocuments />
+           </DashboardLayout>
+         </ProtectedRoute>
+       }
+     />
 
         {/* Employee Management */}
 

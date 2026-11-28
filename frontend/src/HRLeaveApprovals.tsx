@@ -28,7 +28,7 @@ export default function HRLeaveApprovals() {
     }
 
     try {
-      const response = await fetch('http://localhost:8080/api/leaves', {
+      const response = await fetch('/api/leaves', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
